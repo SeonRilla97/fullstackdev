@@ -1,7 +1,6 @@
 import jwtAxios from "../util/jwtUtil";
-import { API_SERVER_HOST } from "./todoApi";
-//로그인 정보를 사용하기 때문에 jwtAxios 사용
-const host = `${API_SERVER_HOST}/api/cart`;
+ //로그인 정보를 사용하기 때문에 jwtAxios 사용
+const host = `${process.env.REACT_APP_SERVER_HOST}/api/cart`;
 
 export const getCartItems = async () => {
   const res = await jwtAxios.get(`${host}/items`);

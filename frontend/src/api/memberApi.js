@@ -1,8 +1,7 @@
 import jwtAxios from "../util/jwtUtil";
-import { API_SERVER_HOST } from "./todoApi";
-import Axios from "axios";
+ import Axios from "axios";
 
-const host = `${API_SERVER_HOST}/api/member`;
+const host = `${process.env.REACT_APP_SERVER_HOST}/api/member`;
 
 // 비동기 로그인 처리
 export const loginPost = async (loginParam) => {
