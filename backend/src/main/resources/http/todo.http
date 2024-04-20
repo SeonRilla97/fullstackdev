@@ -1,0 +1,23 @@
+PUT {{api-host}}/api/todo/103
+Content-Type: application/json
+
+{
+  "title"  : "Sample Modify Title",
+  "writer"  : "modify-user1",
+  "dueDate" : "2023-03-31"
+}
+
+###
+# todo 등록
+POST {{api-host}}/api/todo/
+Content-Type: application/json
+
+{
+  "title"  : "Sample Title",
+  "writer"  : "user1",
+  "dueDate" : "2023-10-10"
+}
+
+###
+#todo Paging 조회
+GET {{api-host}}/api/todo/list?page=3&size=10

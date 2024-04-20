@@ -1,0 +1,25 @@
+version: "3.1"
+
+services:
+  maria:
+    image: docker.io/bitnami/mariadb:10.6
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mariadb/etc/mysql/conf.d:/etc/mysql/conf.d:ro
+      - ./mariadb/var/lib/mysql:/var/lib/mysql
+      - ./mariadb/var/log/maria:/var/log/maria
+    environment:
+      - TZ="Asia/Seoul"
+      - ALLOW_EMPTY_PASSWORD=no
+      - MARIADB_ROOT_PASSWORD=1234
+      - MARIADB_USER=admin
+      - MARIADB_DATABASE=malldb
+      - MARIADB_PASSWORD=1234
+    networks:
+      - backend
+    restart: always
+
+networks:
+  backend:
